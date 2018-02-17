@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'localMaven'
+    }
+
     parameters {
          string(name: 'tomcat_dev', defaultValue: '/Users/dperdue/jenkins_project/apache-tomcat-8.5.28-production/webapps', description: 'Staging Server')
          string(name: 'tomcat_prod', defaultValue: '/Users/dperdue/jenkins_project/apache-tomcat-8.5.28-staging/webapps', description: 'Production Server')
